@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Index</title>
+
+    <style>
+        body{
+            background-color: #555;
+        }
+        .hamburguer{
+            width: 200px;
+            height: 200px;
+            background-color: #333;
+            border-radius: 10%;
+            position: relative;
+        }
+        .hamburguer::after{
+            content: '';
+            position: absolute;
+
+            width: 70%;
+            height: 10%;
+            border-radius: 20px;
+            top: 30%;
+            left: 15%;
+            background-color: #fff;
+
+            transition: 1s;
+        }
+        .hamburguer::before{
+            content: '';
+            position: absolute;
+
+            width: 70%;
+            height: 10%;
+            border-radius: 20px;
+            top: 60%;
+            left: 15%;
+            background-color: #fff;
+            transition: 1s;
+        }
+
+        #hamburguer:checked ~ label .hamburguer::after{
+            transform: rotate(225deg);
+            top: 45%;
+            left: 15%;
+        }
+
+        #hamburguer:checked ~ label .hamburguer::before{
+            transform: rotate(-225deg);
+            /*transform: rotate(135deg);*/
+            top: 45%;
+            left: 15%;
+        }
+    </style>
+</head>
+<body>
+    
+    <input type="checkbox" id="hamburguer" style="display: none;" />
+
+    <label for="hamburguer">
+        <div class="hamburguer"></div>
+    </label>
+
+</body>
+</html>
